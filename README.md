@@ -58,7 +58,10 @@ Some students have encountered memory problems when executing the code for this 
 import sys
 import os
 from time import time
+
+### NOTE:  Change the path below to your environment ###
 os.chdir("${HOME}/Udacity/Intro_Machine_Learning/ud120-projects/naive_bayes")
+
 sys.path.append("../tools/")
 from email_preprocess import preprocess
 
