@@ -1,4 +1,7 @@
 
+## Explore Enron Data Excercise
+Joseph J. Oravetz
+
 
 ```python
 #!/usr/bin/python
