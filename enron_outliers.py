@@ -10,6 +10,9 @@ from feature_format import featureFormat, targetFeatureSplit
 
 ### read in data dictionary, convert to numpy array
 data_dict = pickle.load( open("../final_project/final_project_dataset.pkl", "r") )
+
+data_dict.pop ( "TOTAL", 0 )
+
 features = ["salary", "bonus"]
 data = featureFormat(data_dict, features)
 
@@ -30,8 +33,10 @@ keys = data_dict.keys()
 for key in keys:
    salary_test = data_dict[key]["salary"]
    bonus_test = data_dict[key]["bonus"]
-   if ( salary_test == max_salary ):
-      print "Person =", key, "Salary =", salary_test, "Bonus =", bonus_test
+   ### if ( salary_test == max_salary ) and ( bonus_test == max_bonus ):
+   if ( salary_test != "NaN" ) and ( bonus_test != "NaN" ):
+      if ( salary_test > 1000000 ) and ( bonus_test > 5000000 ):
+         print "Person =", key, "Salary =", salary_test, "Bonus =", bonus_test
 
 # feature_list = ["poi", "salary", "bonus"] 
 # data_array = featureFormat( data_dict, feature_list )
